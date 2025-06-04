@@ -44,6 +44,41 @@ You can deploy your own version of the Next.js AI Chatbot to Vercel with one cli
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot&env=AUTH_SECRET&envDescription=Learn+more+about+how+to+get+the+API+Keys+for+the+application&envLink=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&demo-title=AI+Chatbot&demo-description=An+Open-Source+AI+Chatbot+Template+Built+With+Next.js+and+the+AI+SDK+by+Vercel.&demo-url=https%3A%2F%2Fchat.vercel.ai&products=%5B%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22ai%22%2C%22productSlug%22%3A%22grok%22%2C%22integrationSlug%22%3A%22xai%22%7D%2C%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22productSlug%22%3A%22neon%22%2C%22integrationSlug%22%3A%22neon%22%7D%2C%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22integrationSlug%22%3A%22upstash%22%7D%2C%7B%22type%22%3A%22blob%22%7D%5D)
 
+## CRM Shell Foundation (AgentAdmissions)
+
+The repo now contains an **early demo shell** for the upcoming AgentAdmissions CRM:
+
+* Collapsible left sidebar & slim top bar
+* Command palette (⌘-K) with page-jump actions
+* Route stubs for Dashboard, Patients, Intake and Tasks
+* Mock API endpoint powering a placeholder metric card
+
+### Quick Start for the Shell Demo
+
+```bash
+pnpm install             # one-time deps
+pnpm dlx shadcn@latest add sidebar  # installs sidebar component + color tokens
+pnpm dev                 # start Next.js at http://localhost:3000
+```
+
+Then visit:
+
+* `http://localhost:3000/dashboard`
+* `http://localhost:3000/patients`
+* `http://localhost:3000/intake`
+* `http://localhost:3000/tasks`
+
+Collapse / expand the sidebar with the trigger next to the top bar. State is saved via cookie. Press ⌘-K anywhere to open the command palette.
+
+### Tracking Work
+
+All one-point stories live in [`feature-crm-shell-stories.md`](./feature-crm-shell-stories.md).  Each story starts with an unchecked box – check it off in the file when a PR merges.
+
+**Definition of Done** (for every story)
+1. Code passes `pnpm lint` & tests
+2. Peer review approved & merged to `main`
+3. User-facing docs (README or stories file) updated
+
 ## Running locally
 
 You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
