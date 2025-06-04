@@ -63,12 +63,15 @@ pnpm dev                 # start Next.js at http://localhost:3000
 
 Then visit:
 
-* `http://localhost:3000/dashboard`
-* `http://localhost:3000/patients`
-* `http://localhost:3000/intake`
-* `http://localhost:3000/tasks`
+* `http://localhost:3000/` (this will redirect to `/crm/dashboard`)
+* `http://localhost:3000/crm/dashboard`
+* `http://localhost:3000/crm/patients`
+* `http://localhost:3000/crm/intake`
+* `http://localhost:3000/crm/tasks`
+* `http://localhost:3000/crm/chat` (the chat interface, now within the CRM shell)
 
-Collapse / expand the sidebar with the trigger next to the top bar. State is saved via cookie. Press ⌘-K anywhere to open the command palette.
+Collapse / expand the sidebar with the trigger in the top bar. State is saved via cookie. Press ⌘-K (Ctrl-K on Windows/Linux) anywhere to open the command palette.
+If running `pnpm dlx shadcn@latest add sidebar` prompts to overwrite existing files (like `button.tsx`, `sidebar.tsx`), it's generally safe to allow overwriting for this demo.
 
 ### Tracking Work
 

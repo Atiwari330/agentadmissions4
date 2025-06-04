@@ -36,68 +36,68 @@
 *(All are prepended with an unchecked box for progress tracking.)*
 
 ### Layout Framework
-- [ ] **US-L1 – Shell Wrapper**  
+- [x] **US-L1 – Shell Wrapper**  
   *As an end-user I want every page framed by a consistent shell so that navigation feels seamless.*  
   **Acceptance**: Visiting any of the stub routes shows a left sidebar, slim top bar, and a content area that fills the viewport without outer scrollbars.
 
-- [ ] **US-L2 – Viewport Height**  
+- [x] **US-L2 – Viewport Height**  
   *As an end-user I want the shell to occupy 100 vh so that vertical scroll occurs only inside the main content area.*  
   **Acceptance**: `document.body` shows no extra scroll when sample content height < viewport.
 
 ### Sidebar Navigation
-- [ ] **US-S1 – Install Sidebar Component**  
+- [x] **US-S1 – Install Sidebar Component**  
   *As a developer I want to install `sidebar.tsx` via shadcn CLI so that I avoid writing boilerplate.*  
   **Acceptance**: Running `pnpm dlx shadcn@latest add sidebar` generates `components/ui/sidebar.tsx` and adds color tokens to `globals.css` without errors.
 
-- [ ] **US-S2 – Base Menu Items**  
+- [x] **US-S2 – Base Menu Items**  
   *As a user I can click Dashboard, Patients, Intake, and Tasks in the sidebar so that I can move between core areas.*  
   **Acceptance**: Each link routes using Next App Router; the active page link has distinct foreground color.
 
-- [ ] **US-S3 – Collapse & Persist**  
+- [x] **US-S3 – Collapse & Persist**  
   *As a user I can collapse the sidebar to icon-only mode and have it remain collapsed after refresh.*  
   **Acceptance**: Clicking `<SidebarTrigger>` toggles width; cookie `sidebar_state=true|false` is set; state restored on reload.
 
-- [ ] **US-S4 – Active Link Styling**  
+- [x] **US-S4 – Active Link Styling**  
   *As a user I can see which page I am on because the corresponding sidebar item is highlighted.*  
   **Acceptance**: The link whose `href` matches `usePathname()` receives `bg-muted` (light) or `bg-muted/20` (dark); switching routes updates highlighting.
 
 ### Command Palette
-- [ ] **US-C1 – Palette Dialog**  
+- [x] **US-C1 – Palette Dialog**  
   *As a power-user I can open a command palette with ⌘-K so that I can navigate faster.*  
   **Acceptance**: Pressing ⌘-K (or Ctrl-K on Windows) opens a modal with focus trap; Esc closes it.
 
-- [ ] **US-C2 – Palette Actions**  
+- [x] **US-C2 – Palette Actions**  
   *As a user I can select “Go to Patients” from the palette to navigate without the mouse.*  
   **Acceptance**: Selecting an action pushes a new route and closes the palette.
 
-- [ ] **US-C3 – Chat Wrapped in Shell**  
+- [x] **US-C3 – Chat Wrapped in Shell**  
   *As a user I can open the AI Chat and still see the sidebar and top bar so that navigation remains consistent.*  
   **Acceptance**: Move existing `(chat)` route under the new `(crm)` layout; chat UI streams as before while framed by the shell.
 
 ### Route Skeletons
-- [ ] **US-R0 – Root Redirect**  
+- [x] **US-R0 – Root Redirect**  
   *As a visitor I hit `/` and am taken to the Dashboard so that the CRM shell is the first thing I see.*  
   **Acceptance**: `app/page.tsx` server component calls `redirect('/dashboard')`; visiting `/` returns a 308/302 to `/dashboard`.
 
-- [ ] **US-R1 – Dashboard Page**  
+- [x] **US-R1 – Dashboard Page**  
   *As a stakeholder I want a visible Dashboard stub so that I can demo route switching.*  
   **Acceptance**: `/dashboard` renders `<h2>Dashboard</h2>` and a Tailwind card.
 
-- [ ] **US-R2 – Patients / Intake / Tasks Pages**  
+- [x] **US-R2 – Patients / Intake / Tasks Pages**  
   *As a stakeholder I want stub pages for Patients, Intake, and Tasks so that the nav feels complete.*  
   **Acceptance**: Visiting `/patients`, `/intake`, `/tasks` shows unique headings and returns 200.
 
 ### Mock Data Layer
-- [ ] **US-M1 – Mock API Endpoint**  
+- [x] **US-M1 – Mock API Endpoint**  
   *As a developer I need an API route returning dashboard metrics so that the UI can fetch dynamic content.*  
   **Acceptance**: `GET /api/mock/dashboard` responds `{"newInquiries":57,"conversionRate":0.89}` (numbers may vary).
 
-- [ ] **US-M2 – SWR Integration**  
+- [x] **US-M2 – SWR Integration**  
   *As a user I want the dashboard card to display numbers pulled from the mock API so that reloads show live data.*  
   **Acceptance**: Open DevTools → Network; see request; UI reflects latest JSON.
 
 ### Documentation & Human Review
-- [ ] **US-D1 – README Update**  
+- [x] **US-D1 – README Update**  
   *As a new engineer I can read quick-start steps to run the shell in under 2 min.*  
   **Acceptance**: README includes install, shadcn sidebar install, and routes list.
 
@@ -106,7 +106,7 @@
   **Acceptance**: PM verifies nav, palette, mock data; leaves 👍 comment; story closed.
 
 ### Assumption Validation
-- [ ] **US-V1 – Codebase Recon**  
+- [x] **US-V1 – Codebase Recon**  
   *As an engineer I will read `lib/db`, `next.config.ts`, `tailwind.config.ts`, and `sidebarDocs.txt` to document constraints before coding.*  
   **Acceptance**: Findings written to `/docs/dev-notes/architecture.md` with no TODOs left blank.
 
